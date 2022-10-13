@@ -1,9 +1,19 @@
 import React from 'react';
-import { AccumulationChartComponent, AccumulationSeriesCollectionDirective, AccumulationSeriesDirective, Inject, AccumulationLegend, AccumulationDataLabel, AccumulationTooltip, PyramidSeries, AccumulationSelection } from '@syncfusion/ej2-react-charts';
+import {
+  AccumulationChartComponent,
+  AccumulationSeriesCollectionDirective,
+  AccumulationSeriesDirective,
+  Inject,
+  AccumulationLegend,
+  AccumulationDataLabel,
+  AccumulationTooltip,
+  PyramidSeries,
+  AccumulationSelection,
+} from '@syncfusion/ej2-react-charts';
 
 import { PyramidData } from '../../data/dummy';
 import { useStateContext } from '../../contexts/ContextProvider';
-import { ChartsHeader } from '../../components';
+import ChartsHeader from '../../components/ChartsHeader';
 
 const Pyramid = () => {
   const { currentMode } = useStateContext();
@@ -18,7 +28,15 @@ const Pyramid = () => {
           tooltip={{ enable: true }}
           background={currentMode === 'Dark' ? '#33373E' : '#fff'}
         >
-          <Inject services={[AccumulationDataLabel, AccumulationTooltip, PyramidSeries, AccumulationLegend, AccumulationSelection]} />
+          <Inject
+            services={[
+              AccumulationDataLabel,
+              AccumulationTooltip,
+              PyramidSeries,
+              AccumulationLegend,
+              AccumulationSelection,
+            ]}
+          />
           <AccumulationSeriesCollectionDirective>
             <AccumulationSeriesDirective
               name="Food"
